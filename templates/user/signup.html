@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'signup' %}" method="post" style="border:1px solid #ccc">
+    {% csrf_token %}
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      {{ form.email }}
+  
+      <label for="psw"><b>Password</b></label>
+      {{ form.password }}
+
+      <label for="psw"><b>Confirm Password</b></label>
+      {{ form.confirm_password  }}
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+{% endblock content %}
